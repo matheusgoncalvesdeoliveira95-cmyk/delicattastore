@@ -1,0 +1,2 @@
+# delicattastore
+loja
