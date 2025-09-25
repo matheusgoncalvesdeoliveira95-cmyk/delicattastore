@@ -1,1 +1,21 @@
-{% extends 'base.html' %}{% block content %}<h1>Produtos</h1>{% endblock %}
+{% extends "base.html" %}
+{% block content %}
+<h2>Produtos</h2>
+<form method="post" action="{{ url_for('add_produto') }}">
+    Nome: <input type="text" name="nome" required>
+    Preço: <input type="number" step="0.01" name="preco" required>
+    Estoque: <input type="number" name="estoque" required>
+    <button type="submit">Adicionar</button>
+</form>
+<table border="1">
+    <tr><th>ID</th><th>Nome</th><th>Preço</th><th>Estoque</th></tr>
+    {% for p in produtos %}
+    <tr>
+        <td>{{ p[0] }}</td>
+        <td>{{ p[1] }}</td>
+        <td>R$ {{ p[2] }}</td>
+        <td>{{ p[3] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

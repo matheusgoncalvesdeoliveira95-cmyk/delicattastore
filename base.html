@@ -1,1 +1,20 @@
-<!DOCTYPE html><html lang='pt-br'><head><meta charset='UTF-8'><title>Delicatta Store</title></head><body>{% block content %}{% endblock %}</body></html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Delicatta Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Delicatta Store</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Início</a> |
+            <a href="{{ url_for('produtos') }}">Produtos</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
